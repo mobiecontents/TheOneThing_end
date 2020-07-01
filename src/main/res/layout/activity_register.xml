@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity"
+    android:orientation="vertical">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="Sign up"
+        android:fontFamily="@font/nanumgothicbold"
+        android:textColor="#555564"
+        android:textSize="25dp" />
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        >
+        <EditText
+            android:id="@+id/user_name"
+            android:hint="이름을 입력하세요"
+            android:width="300dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="288dp"
+            android:layout_height="50dp"
+            android:paddingLeft="22dp"
+            android:background="@drawable/edit_box"
+            android:elevation="5dp"
+            android:fontFamily="@font/nanumgothic"
+
+            android:textSize="13sp"
+
+
+            />
+
+
+        <EditText
+            android:id="@+id/user_id"
+            android:width="300dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="288dp"
+            android:layout_height="50dp"
+            android:paddingLeft="22dp"
+            android:background="@drawable/edit_box"
+            android:elevation="5dp"
+            android:fontFamily="@font/nanumgothic"
+            android:hint="이메일을 입력하세요"
+            android:textSize="13sp"
+
+
+            />
+
+        <EditText
+            android:id="@+id/user_pw"
+            android:layout_marginTop="20dp"
+            android:width="300dp"
+            android:inputType="textPassword"
+            android:layout_width="288dp"
+            android:layout_height="50dp"
+            android:paddingLeft="22dp"
+            android:background="@drawable/edit_box"
+            android:elevation="5dp"
+            android:fontFamily="@font/nanumgothic"
+            android:hint="비밀번호를 입력하세요"
+            android:paddingBottom="10dp"
+            android:textSize="13sp"/>
+        <EditText
+            android:id="@+id/user_repw"
+            android:inputType="textPassword"
+            android:width="300dp"
+            android:layout_marginTop="20dp"
+            android:layout_width="288dp"
+            android:layout_height="50dp"
+            android:paddingLeft="22dp"
+            android:background="@drawable/edit_box"
+            android:elevation="5dp"
+            android:fontFamily="@font/nanumgothic"
+            android:hint="비밀번호를 다시 입력하세요"
+            android:textSize="13sp"
+            android:layout_marginBottom="5dp"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        >
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="비밀번호는 영문 대소문자, 숫자, 특수기호(,!@#%)를 혼합하여 입력해주세요."
+            android:fontFamily="@font/nanumgothicbold"
+            android:layout_weight="1"
+
+            android:textSize="10dp"/>
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        >
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:background="@drawable/spinner_background"
+            android:theme="@style/SpinnerTheme"
+            android:fontFamily="@font/nanumgothicbold"
+            android:spinnerMode="dialog"/>
+
+
+
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btn_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign up"
+            android:width="300dp"
+            android:fontFamily="@font/nanumgothicbold"
+            android:background="#55555C"
+            android:textColor="#fff"
+            />
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
