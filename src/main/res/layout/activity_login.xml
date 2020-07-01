@@ -29,6 +29,7 @@
         android:textSize="13sp"/>
 
     <EditText
+        android:password="true"
         android:id="@+id/login_pw"
         android:layout_marginTop="18dp"
         android:layout_width="288dp"

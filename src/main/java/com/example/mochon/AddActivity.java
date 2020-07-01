@@ -34,10 +34,14 @@ public class AddActivity extends AppCompatActivity implements RatingBar.OnRating
 
         add_title = findViewById(R.id.add_title);
         add_des = findViewById(R.id.add_des);
-
+        add_title.setHint("계획 제목");
+        add_title.setPadding(40,0,0,0);
+        add_des.setHint("세부 내용");
+        add_des.setPadding(40,0,0,0);
         pos = getIntent().getIntExtra("pos", 0);
 
         add_btn = findViewById(R.id.add_btn);
+        add_btn.setText("추가");
         add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
