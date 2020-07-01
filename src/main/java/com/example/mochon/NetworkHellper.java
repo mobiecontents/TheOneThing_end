@@ -13,5 +13,5 @@ public interface NetworkHellper {
     @POST("/list")
 //    Call<String> Auth(@Field("list[]") ArrayList<MainItem> list );
 
-    Call<ArrayList<String>> Auth(@Field("list") String list);
+    Call<ArrayList<String>> Auth(@Field("list") String list,@Field("email")String email);
 }

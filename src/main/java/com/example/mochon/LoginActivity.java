@@ -63,18 +63,24 @@ public class LoginActivity extends AppCompatActivity {
                 String password = login_pw.getText().toString();
 
             //    System.out.println("이ㅏ아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ웨ㄹ시이ㅣㅣㅣㅣㅣㅣㅣ");
+                System.out.println("이메일은!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+email);
 
-                if (email != null || password != null) {
+                if (!email.equals("") && password != null) {
                     if (login_pw.length() > 6) {
                         login();
                     }
-                    else {
-                        Toast.makeText(LoginActivity.this, "비밀번호는 8자 이상...", Toast.LENGTH_SHORT).show();
+                    else{
+                        Toast.makeText(LoginActivity.this,"비밀번호는 8자 이상입니다",Toast.LENGTH_SHORT).show();
                     }
-
                 }
                 else{
-                   // System.out.println("이ㅏ아ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ웨ㄹ시이ㅣㅣㅣㅣㅣㅣㅣ");
+                    if(email.equals("")){
+                        Toast.makeText(LoginActivity.this, "이메일을 입력해주십시오", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(LoginActivity.this, "비밀번호를 입력해주십시오", Toast.LENGTH_SHORT).show();
+                    }
+
                 }
 
             }
@@ -93,17 +99,23 @@ public class LoginActivity extends AppCompatActivity {
                     if (response.code() == 200) {
                            Toast.makeText(LoginActivity.this, "성공", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Global global=new Global();
+                        System.out.println(login_pw.getText().toString());
+                        global.setEmail(login_pw.getText().toString());
                         startActivity(intent);
 
 
-                    } else if (response.code() == 401) {
-                        Toast.makeText(LoginActivity.this, "실패", Toast.LENGTH_SHORT).show();
                     }
                     else {
                         System.out.println(response.code());
                     }
                 } else {
-                    Toast.makeText(LoginActivity.this, "서버오류.", Toast.LENGTH_SHORT).show();
+                    if (response.code() == 401) {
+                        Toast.makeText(LoginActivity.this, "로그인 실패,ID나 비밀번호를 확인해 주십시오", Toast.LENGTH_SHORT).show();
+                    }
+                    else {
+                        Toast.makeText(LoginActivity.this, "서버오류.", Toast.LENGTH_SHORT).show();
+                    }
                 }
 
 

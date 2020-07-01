@@ -166,15 +166,17 @@ public class ListActivity extends AppCompatActivity {
         mainAdapter.notifyDataSetChanged();
     }
     private void setList(){
+        Global global=new Global();
         Gson gson=new Gson();
         String json=gson.toJson(list);
         System.out.println(json);
+        System.out.println(global.getEmail());
         Retrofit retrofit=new Retrofit.Builder().baseUrl("http://3.19.223.78:8080/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
         NetworkHellper networkHellper=retrofit.create(NetworkHellper.class);
-        networkHellper.Auth(json).enqueue(new Callback<ArrayList<String>>() {
+        networkHellper.Auth(json,global.getEmail()).enqueue(new Callback<ArrayList<String>>() {
             @Override
             public void onResponse(Call<ArrayList<String>> call, Response<ArrayList<String>> response) {
                 System.out.println(response.body());

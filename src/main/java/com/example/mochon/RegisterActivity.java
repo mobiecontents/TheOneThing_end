@@ -85,15 +85,29 @@ public class RegisterActivity extends AppCompatActivity {
                 String mbti = user_mbti;
 
 
-                if (name != null || email != null || password != null || passwordConfirm != null || mbti != null) {
-                    if (user_pw.length() > 6) {
-                        register();
+
+
+
+                if (name.equals("") || email.equals("") || password.equals("") || passwordConfirm.equals("") || mbti.equals("")) {
+                    Toast.makeText(RegisterActivity.this,"빈칸을 모두 채워주십시오",Toast.LENGTH_SHORT).show();
+                }
+                    else {
+                    if(!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+                        Toast.makeText(RegisterActivity.this, "이메일 형식을 맞춰주십시오", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(password.length()<8){
+                        Toast.makeText(RegisterActivity.this, "비밀번호는 8자 이상이여야 합니다", Toast.LENGTH_SHORT).show();
+                    }
+                    else if(!password.equals(passwordConfirm)){
+                        Toast.makeText(RegisterActivity.this, "비밀번호확인이 일치하지 않습니다", Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        Toast.makeText(RegisterActivity.this, "비밀번호는 8자 이상...", Toast.LENGTH_SHORT).show();
+                        register();
                     }
 
-                }
+                    }
+
+
 
             }
         });
@@ -116,7 +130,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } else {
 
                     if (response.code() == 401) {
-                        Toast.makeText(RegisterActivity.this, "비밀번호이 다르거나 이미 회원 가입한 회원입니다.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(RegisterActivity.this, "이미 회원 가입한 회원입니다.", Toast.LENGTH_LONG).show();
 
                     }
                     else {
