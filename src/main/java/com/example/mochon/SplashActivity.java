@@ -18,7 +18,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         Handler hd = new Handler();
-        hd.postDelayed(new splashHandler(), 3000);
+        hd.postDelayed(new splashHandler(), 1500);
     }
 
     private class splashHandler implements Runnable{
